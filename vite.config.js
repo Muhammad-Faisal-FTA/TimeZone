@@ -14,6 +14,14 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path';
 
 export default defineConfig({
+   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      backgroundImage: {
+        'main': "url('/src/assets/Background.png')", // 👈 using alias from vite
+      },
+    },
+  },
   plugins: [
     react(),    
     tailwindcss()
@@ -24,3 +32,17 @@ export default defineConfig({
     },
   },
 });
+
+
+// /** @type {import('tailwindcss').Config} */
+// module.exports = {
+//   content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
+//   theme: {
+//     extend: {
+//       backgroundImage: {
+//         'custom-bg': "url('@/assets/bg-image.jpg')", // 👈 using alias from vite
+//       },
+//     },
+//   },
+//   plugins: [],
+// };
